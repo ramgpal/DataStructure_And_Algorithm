@@ -125,6 +125,19 @@ i++;
     }
     return -1;
 }
+// Reverse of LL
+public void Reverse() {
+    Node Prev = null;
+    Node Curr = tail = head;
+    Node Next;
+    while(Curr!=null) {
+        Next = Curr.next;
+        Curr.next = Prev;
+        Prev = Curr;
+        Curr = Next; 
+    }
+    head =Prev;
+}
 public static void main(String[] args) {
     LinkedList  ll = new LinkedList();
     ll.addFirst(1);
@@ -133,11 +146,13 @@ public static void main(String[] args) {
   ll.addLast(4);
   ll.add(9,2);
   ll.print();
-  ll.removeFirst();
+ll.removeFirst();
   ll.print();
   ll.removeLast();
   ll.print();
   System.out.println(size); 
-  System.out.println(ll.itrSearch(9));
+  System.out.println("index of key is : "+ll.itrSearch(9));
+ll.Reverse();
+  ll.print();
 }
 }
