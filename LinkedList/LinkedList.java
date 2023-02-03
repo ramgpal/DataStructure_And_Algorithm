@@ -1,4 +1,4 @@
-//Java program to implement LinkedList (Add node in first/last/middle of LL), print LL, size of LL
+//Java program to implement Singly LinkedList AddFirst, AddLast, RemoveFirst, RemoveLast, Reverse of LL, DeleteNthNodefromEnd
 import java.util.*;
 public class LinkedList {
 public static class Node {
@@ -138,21 +138,45 @@ public void Reverse() {
     }
     head =Prev;
 }
+//Delete Nth node from end of LL
+public void DeleteNthfromEnd(int n) {
+    //calculate size
+    int size=0;
+    Node temp=head;
+    while(temp!=null) {
+        temp=temp.next;
+        size++;
+    }
+    if(n==size) {
+        head=head.next;
+        return;
+    }
+    int i=1;
+    Node prev=head;
+    while(i<size-n) {
+        prev=prev.next;
+        i++;
+    }
+    prev.next=prev.next.next;
+    return;
+}
 public static void main(String[] args) {
     LinkedList  ll = new LinkedList();
     ll.addFirst(1);
     ll.addFirst(2);
-   ll.addLast(3);
-  ll.addLast(4);
-  ll.add(9,2);
-  ll.print();
-ll.removeFirst();
-  ll.print();
-  ll.removeLast();
-  ll.print();
+    ll.addLast(3);
+    ll.addLast(4);
+    ll.add(9,2);
+    ll.print();
+    ll.removeFirst();
+    ll.print();
+    ll.removeLast();
+    ll.print();
   System.out.println(size); 
   System.out.println("index of key is : "+ll.itrSearch(9));
-ll.Reverse();
-  ll.print();
+   ll.Reverse();
+   ll.print();
+   ll.DeleteNthfromEnd(3);
+   ll.print();
 }
 }
