@@ -112,6 +112,19 @@ public int removeLast() {
    size--;
    return val;
 }
+//Search data in LL 
+public int itrSearch(int key) {
+    Node temp=head;
+    int i=0;
+    while(temp!=null) {
+if(temp.data==key) {
+    return i;
+}
+temp = temp.next;
+i++;
+    }
+    return -1;
+}
 public static void main(String[] args) {
     LinkedList  ll = new LinkedList();
     ll.addFirst(1);
@@ -125,5 +138,6 @@ public static void main(String[] args) {
   ll.removeLast();
   ll.print();
   System.out.println(size); 
+  System.out.println(ll.itrSearch(9));
 }
 }
