@@ -29,7 +29,7 @@ head=newnode;
 //Add node in last of LL
 public void addLast(int data) {
     //step1 - create a new node
-    Node newnode=new Node(data);
+    Node newnode = new Node(data);
     size++;
    if(head==null) {
     head = tail = newnode;
