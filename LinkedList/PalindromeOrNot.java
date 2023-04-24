@@ -96,7 +96,7 @@ public class PalindromeOrNot {
         LL.addLast(1);
         LL.addLast(2);
         LL.addLast(2);
-        LL.addLast(3);
+        LL.addLast(1);
         LL.print();
        System.out.println(LL.isPalindrome());
     }
