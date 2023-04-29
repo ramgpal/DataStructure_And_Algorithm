@@ -27,6 +27,26 @@ public void addFirst(int data) {
     head = newNode;
 }
 
+//addLast
+
+//removeFirst
+public int removeFirst() {
+if(head == null) {
+    System.out.println("LL is empty");
+    return Integer.MIN_VALUE;
+}
+if(size ==1) {
+    int val = head.data;
+    head = tail = null;
+    size--;
+    return val;
+}
+int val = head.data;
+head = head.next;
+head.prev = null;
+size--;
+return val;
+}
      //print
      public void print() {
         Node temp = head;
@@ -43,6 +63,9 @@ public void addFirst(int data) {
        dll.addFirst(2);
        dll.addFirst(3);
        dll.print();
-       System.out.println(dll.size);
+       System.out.println("After adding first LL size is: "+dll.size);
+       dll.removeFirst();
+       dll.print();
+       System.out.println("After removing first size is: "+dll.size);
     }    
 }
