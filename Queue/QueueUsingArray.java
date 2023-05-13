@@ -15,6 +15,7 @@ public class QueueUsingArray {
             return rear == 0;
         }
         
+        //add  TC - O(1)
         public void add(int data) {
             if (rear == size) {
                 System.out.println("Queue is full");
