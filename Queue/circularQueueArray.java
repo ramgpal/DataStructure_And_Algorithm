@@ -1,5 +1,5 @@
 import java.util.*;
-public class Circular_Queue_UsingArray {
+public class circularQueueArray {
     public static class Queue {
         static int arr[];
         static int size;
