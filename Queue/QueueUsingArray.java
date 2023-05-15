@@ -8,24 +8,24 @@ public class QueueUsingArray {
         Queue(int n) {
             arr = new int[n];
             size = n;
-            rear = 0;
+            rear = -1;
         }
         
         public boolean isEmpty() {
-            return rear == 0;
+            return rear == -1;
         }
         
         //add  TC - O(1)
         public void add(int data) {
-            if (rear == size) {
+            if (rear == size-1) {
                 System.out.println("Queue is full");
                 return;
             }
-            
-            arr[rear] = data;
             rear++;
+            arr[rear] = data;
         }
         
+        //remove
         public int remove() {   // TC - O(n)
             if (isEmpty()) {
                 System.out.println("Queue is empty");

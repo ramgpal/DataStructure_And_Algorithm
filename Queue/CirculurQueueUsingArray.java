@@ -20,7 +20,7 @@ public class CirculurQueueUsingArray {
             return (rear+1)%size == front;
         }
 
-           //add  TC - O(1)
+// Add  TC - O(1)
         public void add(int data) {
             if (isFull()) {
                 System.out.println("Queue is full");
@@ -32,8 +32,8 @@ public class CirculurQueueUsingArray {
             rear = (rear+1)%size;
             arr[rear] = data;
         }
-
-        public int remove() {   // TC - O(1)
+//Remove data 
+        public int remove() {  // TC - O(1)
             if (isEmpty()) {
                 System.out.println("Queue is empty");
                 return -1;   
@@ -48,7 +48,7 @@ public class CirculurQueueUsingArray {
             return result;
         }
 
-        //peek
+//Peek
         public int peek() {
         if (isEmpty()) {
             return -1;
