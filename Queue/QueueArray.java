@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.*; 
 public class QueueArray {
     public static class Queue {
         static int arr[];
