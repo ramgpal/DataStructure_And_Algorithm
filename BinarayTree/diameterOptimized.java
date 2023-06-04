@@ -1,3 +1,5 @@
+
+// TC - O(n)
 import java.util.*;
 
 public class diameterOptimized {
@@ -15,7 +17,7 @@ public class diameterOptimized {
 
     static class Info {
         int diam;
-        int ht;
+        int ht; // Height
 
         public Info(int diam, int ht) {
             this.diam = diam;
