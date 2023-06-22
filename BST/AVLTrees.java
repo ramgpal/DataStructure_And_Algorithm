@@ -85,7 +85,7 @@ public class AVLTrees {
             root.right = insert(root.right, key);
         }
         else {
-            return root; // duplicate keys not allowed
+            return root; // duplicate keys are not allowed
         }
         //update root height
         root.height = 1 + Math.max(height(root.left), height(root.right));
