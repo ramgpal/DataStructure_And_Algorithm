@@ -1,3 +1,4 @@
+// considering Min__Heap
 import java.util.*;
 public class insertInHeap {
     static class Heap{
