@@ -3,6 +3,7 @@ import java.util.HashMap;
 
 public class iterationInHashMap {
     public static void main(String[] args) {
+        //create
         HashMap<String, Integer> hm = new HashMap<>();
         //insert TC - O(1)
         hm.put("India", 140);
