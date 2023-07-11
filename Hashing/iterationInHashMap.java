@@ -13,12 +13,9 @@ public class iterationInHashMap {
         hm.put("Nepal", 5);
 
         //iterate 
-        Set<String> keys = hm.keySet();
-        System.out.println(keys);
-
-        for (String k : keys) {
-            System.out.println("key="+k +",value = "+hm.get(k));
-        }
+       for(String key: hm.keySet()) {
+        System.out.println(key);
+       }
     }
 
 }

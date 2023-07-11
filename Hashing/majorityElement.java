@@ -15,8 +15,8 @@ public class majorityElement {
             // hm.put(nums[i], hm.getOrDefault(nums[i], 0)+1); // line 7 to 13 tak ke code ka shortcut
         }
         //iterete on map to access number which larger than (nums.length/3)
-         Set<Integer> keySet = hm.keySet();
-         for (Integer key: keySet) {
+        
+         for (Integer key: hm.keySet()) {
             // Line 17 to 18 ka shortcut -> for(Integer key: hm.keySet()) {}
             if(hm.get(key) > nums.length/2) {
                 System.out.println(key);
