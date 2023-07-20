@@ -1,12 +1,14 @@
 import java.util.*;
 public class trie {
    public static class Node {
-    Node [] children = new Node [26];
-    boolean eow = false;
+    Node [] children;
+    boolean eow;
     Node () {
+        children = new Node[26];
         for(int i =0;i<26;i++) {
             children[i] = null;
         }
+        eow = false; 
     }
    }
    public static Node root = new Node();
