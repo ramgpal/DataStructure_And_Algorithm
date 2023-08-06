@@ -17,4 +17,4 @@ public class Permutations {
     
 
 }
-//Time Complexity O(n*n!)
+//Time Complexity O(n*n)
