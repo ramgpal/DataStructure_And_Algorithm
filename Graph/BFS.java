@@ -31,7 +31,7 @@ public class BFS {
         graph[4].add(new Edge(4, 2, 1));
         // to print neighbours of 2
    }
-   public static void bfs(ArrayList<Edge> [] graph) {
+   public static void bfs(ArrayList<Edge> [] graph) { // TC -> O(V+E)
     Queue<Integer> q = new LinkedList<>(); // FIFO
     boolean visited [] = new boolean[graph.length]; // initially false
     q.add(0); // start -> 0  (BFS me start khi se kr sakte hain)
