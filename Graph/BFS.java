@@ -1,4 +1,6 @@
 import java.util.*;
+
+import javax.sound.midi.SysexMessage;
 public class BFS {
     static class Edge{
         int src;
@@ -34,19 +36,18 @@ public class BFS {
    public static void bfs(ArrayList<Edge> [] graph) { // TC -> O(V+E)
     Queue<Integer> q = new LinkedList<>(); // FIFO
     boolean visited [] = new boolean[graph.length]; // initially false
-    q.add(0); // start -> 0  (BFS me start khi se kr sakte hain)
+    q.add(0);
     while(!q.isEmpty()) {
         int curr = q.remove();
-        if(!visited[curr]) {  // yadi visited[curr] par false hai matlab abhi tak queue me nhi aaya hai
+        if(!visited[curr]) {
             System.out.print(curr+" ");
             visited[curr] = true;
-            // to add all neighbours of curr into the queue
             for(int i = 0; i < graph[curr].size(); i++) {
                 Edge e = graph[curr].get(i);
                 q.add(e.dest);
             }
         }
-    } 
+    }
    }
    public static void main(String[] args) {
     int V = 5;
