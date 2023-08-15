@@ -26,7 +26,7 @@ public class TopologicalSorting {
   }
 
 // TC - O(V+E)
-// Modified DFS -> using a stack we can check dependencies
+// Method1: Using modified DFS -> using a stack we can check dependencies
   public static void topologicalSorting(ArrayList<Edge> [] graph) {
     boolean visited[] = new boolean[graph.length];
     Stack<Integer> s = new Stack<>();
@@ -39,8 +39,6 @@ public class TopologicalSorting {
       System.out.print(s.pop()+" ");
     }
   }
-
-
   public static void topologicalSortingUtil(ArrayList<Edge> [] graph, int curr,  boolean visited[], Stack<Integer> s) {
       visited[curr] = true;
       for(int i = 0; i < graph[curr].size(); i++) {
@@ -51,6 +49,7 @@ public class TopologicalSorting {
       }
       s.push(curr);
   }
+
 
 
   public static void main(String[] args) {
