@@ -8,6 +8,8 @@ public class TopologicalSorting {
         this.dest = d;
     }
   }  
+
+
   public static void createGraph(ArrayList<Edge> []graph) {
     for(int i = 0; i < graph.length; i++) {
         graph[i] = new ArrayList<>();
@@ -22,6 +24,8 @@ public class TopologicalSorting {
     graph[5].add(new Edge(5, 0)); 
     graph[5].add(new Edge(5, 2)); 
   }
+
+// TC - O(V+E)
 // Modified DFS -> using a stack we can check dependencies
   public static void topologicalSorting(ArrayList<Edge> [] graph) {
     boolean visited[] = new boolean[graph.length];
@@ -35,6 +39,8 @@ public class TopologicalSorting {
       System.out.print(s.pop()+" ");
     }
   }
+
+
   public static void topologicalSortingUtil(ArrayList<Edge> [] graph, int curr,  boolean visited[], Stack<Integer> s) {
       visited[curr] = true;
       for(int i = 0; i < graph[curr].size(); i++) {
@@ -45,6 +51,8 @@ public class TopologicalSorting {
       }
       s.push(curr);
   }
+
+
   public static void main(String[] args) {
     int V = 6;
     ArrayList<Edge> [] graph = new ArrayList[V];
