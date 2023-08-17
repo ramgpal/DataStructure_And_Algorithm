@@ -22,30 +22,6 @@ public class topSortBFS{
         graph[5].add(new Edge(5, 2));
     }
 
-    // Method1: Using modified DFS with stack
-    public static void topologicalSorting(ArrayList<Edge>[] graph) {
-        boolean visited[] = new boolean[graph.length];
-        Stack<Integer> s = new Stack<>();
-        for (int i = 0; i < graph.length; i++) {
-            if (!visited[i]) {
-                topologicalSortingUtil(graph, i, visited, s);
-            }
-        }
-        while (!s.isEmpty()) {
-            System.out.print(s.pop() + " ");
-        }
-    }
-
-    public static void topologicalSortingUtil(ArrayList<Edge>[] graph, int curr, boolean visited[], Stack<Integer> s) {
-        visited[curr] = true;
-        for (int i = 0; i < graph[curr].size(); i++) {
-            Edge e = graph[curr].get(i);
-            if (!visited[e.dest]) {
-                topologicalSortingUtil(graph, e.dest, visited, s);
-            }
-        }
-        s.push(curr);
-    }
 
     // Method2: Using modified BFS with in-degree
     public static void topSort(ArrayList<Edge>[] graph) {
@@ -89,11 +65,6 @@ public class topSortBFS{
             graph[i] = new ArrayList<>();
         }
         createGraph(graph);
-
-        System.out.println("Topological Sorting using DFS:");
-        topologicalSorting(graph);
-
-        System.out.println("\nTopological Sorting using BFS:");
         topSort(graph);
     }
 }
