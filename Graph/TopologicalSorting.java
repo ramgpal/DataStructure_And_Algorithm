@@ -32,7 +32,7 @@ public class TopologicalSorting {
     Stack<Integer> s = new Stack<>();
     for(int i = 0; i < graph.length; i++) {
         if(!visited[i]) {
-            topologicalSortingUtil(graph, i, visited, s); // Modifies dfs functi0n
+            topologicalSortingUtil(graph, i, visited, s); // Modifies DFS functi0n
         }
     }
     while(!s.isEmpty()) {
