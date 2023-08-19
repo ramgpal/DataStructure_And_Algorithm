@@ -25,7 +25,8 @@ public class BiPartite {
        graph[3].add(new Edge(3,1));
        graph[3].add(new Edge(3, 2));
    }
-// Bi-partite
+// Bi-partite 
+   // TC - O(V+E)
    public static boolean isBipartite(ArrayList<Edge>[] graph) {
     int color[] = new int[graph.length];
     for(int i = 0; i < color.length; i++) {
