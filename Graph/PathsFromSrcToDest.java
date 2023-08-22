@@ -29,6 +29,7 @@ public class PathsFromSrcToDest {
     public static void printAllPaths(ArrayList<Edge>[] graph, int source, int destination, String ans) {
         if(source == destination) {
             System.out.println(ans + destination);
+            return;
         }
         for(int i = 0; i < graph[source].size(); i++) {
             Edge e = graph[source].get(i);
