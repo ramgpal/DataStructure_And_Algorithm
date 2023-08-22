@@ -24,5 +24,23 @@ public class PathsFromSrcToDest {
         // vertex -> 5
         graph[5].add(new Edge(5, 0));
         graph[5].add(new Edge(4, 2));
+    } 
+    // TC - O(V^V)
+    public static void printAllPaths(ArrayList<Edge>[] graph, int source, int destination, String ans) {
+        if(source == destination) {
+            System.out.println(ans + destination);
+        }
+        for(int i = 0; i < graph[source].size(); i++) {
+            Edge e = graph[source].get(i);
+            printAllPaths(graph, e.dest, destination, ans+source);
+        }
+    }
+    public static void main(String[] args) {
+        int v = 6;
+        ArrayList<Edge> [] graph = new ArrayList[v];
+        createGraph(graph);
+        int src = 5;
+        int dest = 1;
+        printAllPaths(graph, src, dest, "");
     }
 }
