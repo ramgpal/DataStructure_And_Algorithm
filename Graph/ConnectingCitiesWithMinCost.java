@@ -12,6 +12,7 @@ public class ConnectingCitiesWithMinCost {
             return this.cost - e2.cost; // ascending
         }
     }
+    // Tc
     public static int connectingCities(int cities[][]) {
         PriorityQueue<Edge> pq = new PriorityQueue<>();
         boolean [] visited = new boolean[cities.length];
