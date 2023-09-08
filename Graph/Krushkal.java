@@ -30,12 +30,14 @@ public class Krushkal {
             parent[i] = i;
         }
     }
+    // constant TC
     public static int find(int x) {
         if(x == parent[x]) {
             return x;
         }
         return parent[x] = find(parent[x]);
     }
+    // constant TC
     public static void Union(int a, int b) {
         int parA = find(a);
         int parB = find(b);
@@ -51,6 +53,7 @@ public class Krushkal {
            parent[parB] = parA;
         }
     }
+    // TC -> O(V + ElogE)
     public static void krushkalMST(ArrayList<Edge> edges, int v) {   
         init();
         Collections.sort(edges);
