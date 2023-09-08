@@ -58,7 +58,7 @@ public class Krushkal {
         init();
         Collections.sort(edges);
         int cost = 0;
-        int count = 0;
+        // int count = 0;
         for (int i = 0; i < edges.size(); i++) { // Iterate through all edges
            Edge e = edges.get(i);
            int parA = find(e.src); // a -> src
@@ -66,7 +66,7 @@ public class Krushkal {
            if (parA != parB) {
                 Union(e.src, e.dest);
                 cost += e.cost;
-                count++;
+                // count++;
            }
         }
         System.out.println(cost);
