@@ -4,6 +4,11 @@ public class FloodFillAlgo {
         if(sr < 0 || sc < 0 || sr >= images.length || sc >= images[0].length || images[sr][sc] != OrgCol || visited[sr][sc]) {
             return;
         }
+         // Mark the current pixel as visited
+         visited[sr][sc] = true;
+        
+         // Set the color of the current pixel to the new color
+         images[sr][sc] = color;
         //left
         helper(images, sr, sc-1, color, visited, OrgCol);
         // right
