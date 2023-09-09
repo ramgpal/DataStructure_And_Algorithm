@@ -1,5 +1,6 @@
 import java.util.*;
 public class FloodFillAlgo {
+    // TC -> O(m*n)
     public static void helper(int images[][], int sr, int sc, int color, boolean visited[][], int OrgCol) {
         if(sr < 0 || sc < 0 || sr >= images.length || sc >= images[0].length || images[sr][sc] != OrgCol || visited[sr][sc]) {
             return;
