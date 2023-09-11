@@ -1,6 +1,6 @@
 import java.util.*;
 public class Fibonacci {
-    public static int fib(int n, int [] f) {
+    public static int fib(int n, int [] f) { // TC -> O(n)
         if(n == 0 || n == 1) {
             return n;
         }
