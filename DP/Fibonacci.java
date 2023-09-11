@@ -13,7 +13,7 @@ public class Fibonacci {
         return f[n];
     }
     
-// Tabulation
+// Tabulation -> O(n)
     public static int fibTabulation(int n) {
         int dp[] = new int[n+1];
         // initialisation
