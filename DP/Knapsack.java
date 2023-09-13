@@ -20,7 +20,7 @@ public class Knapsack {
         }
     }
 
-// Memozation O(nW)
+// Memozation O(n * W)
         public static int knapsackMemoization(int val[], int wt[], int W, int n, int dp[][]) {
         if (W == 0 || n == 0) {
             return 0;
