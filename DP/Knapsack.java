@@ -3,22 +3,22 @@ import java.util.*;
 public class Knapsack {
 //  TC - O(2^n)
     public static int knapsack(int val[], int wt[], int W, int n) {
-        if (W == 0 || n == 0) {
+        if(W == 0 || n == 0) {
             return 0;
         }
-        // valid
-        if (wt[n - 1] <= W) {
-            // Include the current item
-            int ans1 = val[n - 1] + knapsack(val, wt, W - wt[n - 1], n - 1);
-            // Exclude the current item
-            int ans2 = knapsack(val, wt, W, n - 1);
-            return Math.max(ans1, ans2);
-            // invalid
-        } else {
-            // If the current item's weight is greater than the remaining capacity, skip it
-            return knapsack(val, wt, W, n - 1);
+        // valid way
+            if(wt[n-1] <= W) {
+                // include
+                int ans1 = val[n-1] + knapsack(val, wt, W-wt[n-1], n-1);
+                // exclude
+                int ans2 = knapsack(val, wt, W, n-1);
+                return Math.max(ans1, ans2);
+            }
+        // invalid way
+           else {
+            return knapsack(val, wt, W, n-1);
+           }
         }
-    }
 
 // Memozation O(n * W)
         public static int knapsackMemoization(int val[], int wt[], int W, int n, int dp[][]) {
@@ -43,6 +43,8 @@ public class Knapsack {
             return dp[n][W];
         }
     }
+
+//  Tabulation
 
     public static void main(String[] args) {
         int val[] = {15, 14, 10, 45, 30};
