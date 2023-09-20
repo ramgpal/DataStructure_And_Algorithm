@@ -45,6 +45,31 @@ public class Knapsack {
     }
 
 //  Tabulation
+    public static int knapsackTabulation(int val[], int wt[], int W) {
+       int n = val.length;
+       int dp[][] = new int[n+1][W+1];
+       for(int i = 0; i <= n; i++) {
+         dp[i][0] = 0; // for oth Column
+       }
+        for(int j = 0; j <= W; j++) {
+            dp[0][j] = 0; // for 0th Row
+        }
+       for(int i = 1; i <= n; i++) {
+         for(int j = 1; j <= W; j++) {
+            int v = val[i-1]; // ith item value
+            int w = wt[i-1]; // ith item weight
+            if(w <= j) { // valid
+                int profit1 = v + dp[i-1][j-w];
+                int profit2 = dp[i-1][j];
+                dp[i][j] = Math.max(profit1, profit2);
+            }
+            else {
+                dp[i][j] = dp[i-1][j];
+            }
+         }
+        }
+        return dp[n][W];
+    }
 
     public static void main(String[] args) {
         int val[] = {15, 14, 10, 45, 30};
@@ -57,5 +82,6 @@ public class Knapsack {
             Arrays.fill(dp[i], -1);
         }
         System.out.println(knapsackMemoization(val, wt, W, n, dp));
+        System.out.println(knapsackTabulation(val, wt, W));
     }
 }
