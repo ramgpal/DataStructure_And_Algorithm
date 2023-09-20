@@ -44,7 +44,7 @@ public class Knapsack {
         }
     }
 
-//  Tabulation
+//  Tabulation -> O(n*W)
     public static int knapsackTabulation(int val[], int wt[], int W) {
        int n = val.length;
        int dp[][] = new int[n+1][W+1];
