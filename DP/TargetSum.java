@@ -1,5 +1,6 @@
 import java.util.*;
 public class TargetSum {
+    // TC -> O(n*sum)
     public static boolean targerSubsetSum(int arr[], int sum) {
         int n = arr.length;
         // table 
@@ -8,6 +9,7 @@ public class TargetSum {
         for(int i = 1; i <= n; i++) {
             dp[i][0] = true; // when sum is zero then it will always true
         }
+        // filling
         for(int i = 1; i <= n; i++) {
             for(int j = 1; j <= sum; j++) {
                 int v = arr[i-1];
