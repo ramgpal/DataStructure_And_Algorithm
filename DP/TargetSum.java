@@ -1,7 +1,7 @@
 import java.util.*;
 public class TargetSum {
     // TC -> O(n*sum)
-    public static boolean targerSubsetSum(int arr[], int sum) {
+    public static boolean targetSubsetSum(int arr[], int sum) {
         int n = arr.length;
         // table 
         boolean dp[][] = new boolean[n+1][sum+1];
@@ -28,6 +28,6 @@ public class TargetSum {
     public static void main(String[] args) {
         int arr[] = {4, 2, 7, 1, 3};
         int sum = 10;
-        System.out.println(targerSubsetSum(arr, sum));
+        System.out.println(targetSubsetSum(arr, sum));
     }
 }
