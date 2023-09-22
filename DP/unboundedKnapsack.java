@@ -1,15 +1,15 @@
 import java.util.*;
 public class unboundedKnapsack {
-// Tabulation
+// Tabulation O(n*W)
     public static int UnBoundedKnapsack(int val[], int wt[], int W) {
         int n = val.length;
         int dp[][] = new int[n+1][W+1];
         // intialization
         for(int i = 0; i <=n; i++) {
-            dp[i][0] = 0; // if(n == 0 then profit will be 0)
+            dp[i][0] = 0; // if(W == 0 then profit will be 0)
         }
         for(int j = 0; j <=W; j++) {
-            dp[0][j] = 0; // if(W == 0 then profit will be 0)
+            dp[0][j] = 0; // if(n == 0 then profit will be 0)
         }
         // filling
         for(int i = 1; i <=n; i++) {
