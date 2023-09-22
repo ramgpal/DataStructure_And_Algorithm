@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class unboundedKnapsack {
-
+// Tabulation -> O(n*W)
     public static int UnBoundedKnapsack(int val[], int wt[], int W, int dp[][]) {
         int n = val.length;
 
@@ -15,11 +15,11 @@ public class unboundedKnapsack {
 
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= W; j++) {
-                if (wt[i - 1] <= j) {
-                    int profit1 = val[i - 1] + dp[i][j - wt[i - 1]];
-                    int profit2 = dp[i - 1][j];
+                if (wt[i - 1] <= j) { // valid
+                    int profit1 = val[i - 1] + dp[i][j - wt[i - 1]]; // included
+                    int profit2 = dp[i - 1][j]; // excluded
                     dp[i][j] = Math.max(profit1, profit2);
-                } else {
+                } else { // invalid
                     dp[i][j] = dp[i - 1][j];
                 }
             }
