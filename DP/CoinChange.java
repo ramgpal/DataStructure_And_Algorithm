@@ -1,6 +1,6 @@
 import java.util.*;
 public class CoinChange {
-    // tabulation
+    // tabulation -> O(n*sum)
     public static int coinChange(int coins[], int sum) {
         int n = coins.length;
         int dp[][] = new int[n+1][sum+1];
