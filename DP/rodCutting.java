@@ -1,6 +1,6 @@
 import java.util.*;
 public class rodCutting {
-// Tabulation method like UnBounded Knapsack
+// Tabulation method like UnBounded Knapsack -> O(price.length*rodLength)
     public static int RodCutting(int length[], int price[], int rodLength) {
         // DP table
         int n = price.length;
