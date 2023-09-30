@@ -9,6 +9,7 @@ class PairSum2 {
                 pivot=i; //rotating point
             }
         }
+        // This is a java program
         int lp = pivot+1;  //smallest
          int rp=pivot;     //largest
          while(lp!=rp) {
