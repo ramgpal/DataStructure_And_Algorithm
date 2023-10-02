@@ -1,4 +1,5 @@
 public class EditDistance {
+// tabulation -> O(n*m)
     public static int minOpearationToMakeStringEqual(String word1, String word2, int n, int m) {
         // dp table
         int dp[][] = new int[n+1][m+1];
