@@ -1,4 +1,5 @@
 public class wildcardMatching {
+// tabulation Hard -> O(n*m)
     public static boolean WildCardMatching(String string, String pattern) {
         int n = string.length();
         int m = pattern.length();
