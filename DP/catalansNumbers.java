@@ -27,7 +27,7 @@ public class catalansNumbers {
         return dp[n] = ans;
     }
 
-// Tabulation -> O(n)
+// Tabulation -> O(n^2)
     public static int catalanstabulation(int n) {
         // dp table -> 1D array
         int dp[] = new int[n + 1];
