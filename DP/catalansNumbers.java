@@ -1,5 +1,5 @@
 import java.util.*;
-public class CatalansNumber {
+public class catalansNumbers {
 // Recursion
     public static int catalansRecursion(int n) {
         if(n == 0 || n == 1) {
@@ -17,7 +17,7 @@ public class CatalansNumber {
         if(n == 0 || n == 1) {
             return 1;
         }
-        if(dp[n] == -1) {
+        if(dp[n] != -1) {
             return dp[n];
         }
         int ans = 0;
@@ -32,7 +32,7 @@ public class CatalansNumber {
         // dp table -> 1D array
         int dp[] = new int[n + 1];
         // Initialization
-        dp[0] = 0;
+        dp[0] = 1;
         dp[1] = 1;
         // table filling
         for(int i = 2; i <= n; i++) {
