@@ -17,7 +17,7 @@ public class MCM {
         return ans;
     }
 
-    // Memoization
+    // Memoization -> O(n^2)
      public static int mcmMemoization(int arr[], int i, int j, int dp[][]) {
         if(i == j) {
             return 0; // A single matrix or no matrix
