@@ -70,5 +70,6 @@ public class MCM {
            Arrays.fill(dp[t], -1);
         }
         System.out.println(mcmMemoization(arr, i, j, dp));
+        System.out.println(mcmTabulation(arr)); 
     }
 }
