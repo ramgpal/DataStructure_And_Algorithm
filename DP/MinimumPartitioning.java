@@ -30,6 +30,12 @@ public class MinimumPartitioning {
                 }
             }
         }
+         for(int i = 0; i <= n; i++) {
+            for(int j = 0; j <= W; j++) {
+                System.out.print(dp[i][j]+" ");
+            }
+            System.out.println();
+        }
         int sum1 = dp[n][W];
         int sum2 = sum - sum1;
         return Math.abs(sum1 - sum2);
