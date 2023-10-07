@@ -1,5 +1,6 @@
 import java.util.*;
 public class MinimumPartitioning {
+// Tabulation -> O(n*W)
     public static int minDifference(int [] nums) {
         int sum = sumOfArray(nums);
         int W = sum/2;
@@ -15,7 +16,7 @@ public class MinimumPartitioning {
         for(int j = 0; j <= W; j++) {
             dp[0][j] = 0;
         }
-        
+
     // filling dp table
         for(int i = 1; i <= n; i++) {
             for(int j = 1; j <= W; j++) {
