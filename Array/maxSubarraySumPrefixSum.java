@@ -1,4 +1,4 @@
-package Array;
+
 //with TC - O(n^2)
 public class maxSubarraySumPrefixSum {
     public static int PrefixSum(int nums []) {

@@ -1,4 +1,4 @@
-package Array;
+
 
 public class PrintSubarrays {
     public static void printSubarrays(int nums []) {

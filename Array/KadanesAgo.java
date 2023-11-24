@@ -1,4 +1,4 @@
-package Array;
+
 import java.util.*;
 //optimized with TC - O(n)
 public class KadanesAgo {

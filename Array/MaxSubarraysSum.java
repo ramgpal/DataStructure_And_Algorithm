@@ -1,4 +1,3 @@
-package Array;
 import java.util.*;
 //Brute force approach with Tc - O(n^3)
 public class MaxSubarraysSum {
