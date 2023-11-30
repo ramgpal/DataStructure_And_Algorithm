@@ -22,12 +22,22 @@ public class spiralMatrix {
 
             //bottom
             for(int j = endCol-1; j >= startCol; j-- ) {
-                System.out.print(arr[endRow][j]+" ");
+                if(startRow == endRow) {
+                    break;
+                }
+                else {
+                    System.out.print(arr[endRow][j]+" ");
+                }
             }
 
             //left
             for(int i = endRow-1; i >= startRow+1; i--) {
-                System.out.print(arr[i][startCol]+" ");
+                if(startCol == endCol) {
+                    break;
+                }
+                else {
+                    System.out.print(arr[i][startCol]+" ");
+                }  
             }
             startRow++;
             startCol++;
@@ -38,7 +48,7 @@ public class spiralMatrix {
 
         System.out.println(); 
     } 
-    
+
     public static void main(String[] args) {
         int arr[][] = {{1, 2, 3, 4},
                        {5, 6, 7, 8},
