@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.LinkedList;
 public class BiPartite {
     public static class Edge{
         int src;
