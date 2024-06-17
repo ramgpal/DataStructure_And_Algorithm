@@ -1,14 +1,16 @@
+import java.util.*;
 public class methodOverloading {
     public static void main(String[] args) {
-        Calculator c1 = new Calculator();
-        System.out.println(c1.sum(1, 2));
-        System.out.println(c1.sum((float)1.5, (float)2.5));
-        System.out.println(c1.sum(1, 2, 3));
+        calculator calc = new calculator();
+        System.out.println(calc.sum(1, 2));
+        // System.out.println(calc.sum(1.1, 2.3));
+        System.out.println(calc.sum(1, 2, 3));
     }
+   
 }
 
-// compile time polymorphism (Method overloading) -> Having same functions with different parameters
-class Calculator{
+// compile-time polymorphism -> multiple functions with same name but diff params
+class calculator{
     int sum(int a, int b) {
         return a+b;
     }
