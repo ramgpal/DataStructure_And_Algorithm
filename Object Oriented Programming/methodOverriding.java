@@ -1,7 +1,11 @@
+import java.util.*;
 public class methodOverriding {
     public static void main(String[] args) {
         Deer d = new Deer();
         d.eat();
+        System.out.println();
+        // Animal a = new Animal();
+        // a.eat();
     }
 }
 
