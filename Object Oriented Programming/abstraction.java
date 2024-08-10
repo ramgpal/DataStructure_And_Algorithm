@@ -11,6 +11,8 @@ public class Abstraction {
     }
 }
 
+// instance of abstract clas (object) cann't be created. 
+// abtract method Provides idea of the method not implementation.
 abstract class Animal{
     void eat() {
         System.out.println("can eat");
