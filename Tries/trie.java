@@ -1,47 +1,51 @@
 import java.util.*;
-public class trie {
-   public static class Node {
-    Node [] children;
-    boolean eow;
-    Node () {
-        children = new Node[26];
-        for(int i =0;i<26;i++) {
-            children[i] = null;
+public class Trie {
+    public static class Node {
+        Node children[];
+        boolean endOfWord;
+        Node () {
+            children = new Node[26];
+            for(int i = 0; i < 26; i++) {
+                children[i] = null;
+            }
+            endOfWord = false;
         }
-        eow = false; 
     }
-   }
-   public static Node root = new Node();
-// Insert in Trie
-   public static void insert(String word) {  // O(L):  L->
-    Node curr = root;
-    for(int level = 0; level < word.length(); level++) {
-        int idx = word.charAt(level) - 'a';
-        if(curr.children[idx] == null) {
-            curr.children[idx] = new Node();
+
+    public static Node root = new Node();
+
+    // insertion in Trie -> Time complexity will be O(length of largest word)
+    public static void insertNode(String word) {
+        Node curr = root;
+        for(int i = 0; i < word.length(); i++) {
+            if(curr.children[word.charAt(i) - 'a'] == null) {
+                curr.children[word.charAt(i) - 'a'] = new Node();
+            }
+            curr = curr.children[word.charAt(i) - 'a'];
         }
-        curr = curr.children[idx];
+        curr.endOfWord = true;
     }
-    curr.eow = true;
-   }
-//Search in Trie => O(L)
-   public static boolean Search(String word) {
-    Node curr = root;
-    for(int i = 0; i<word.length();i++) {
-        int idx = word.charAt(i) -'a';
-        if(curr.children[idx] == null) {
-            return false;
+
+    // Searching in Trie -> Time complexity will be O(length of largest word)
+    public static boolean search(String str) {
+        Node curr = root;
+        for(int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            int idx = ch - 'a';
+            if(curr.children[idx] == null) {
+                return false;
+            }
+            curr = curr.children[idx];
         }
-        curr = curr.children[idx];
+
+        return curr.endOfWord;
     }
-    return curr.eow == true;
-   }
-   public static void main(String[] args) {
-    String[] words = {"the", "a", "there", "their", "any", "thee"};
-    String key = "thor";
-    for(int i = 0; i< words.length; i++) {
-        insert(words[i]);
+    public static void main(String[] args) {
+        String words[] = {"the", "a", "there", "their", "any", "thee"};
+        for(String word : words) {
+            insertNode(word);
+        }
+
+        System.out.println(search("any"));
     }
-    System.out.println(Search(key));
-   }
 }
