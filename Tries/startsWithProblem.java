@@ -22,7 +22,7 @@ public class startsWithProblem {
     }
     curr.eow = true;
    }
-//Search in Trie => O(L)
+   //Search in Trie => O(L)
    public static boolean startsWith(String prefix) {  //similiar to search fun.
     Node curr = root;
     for(int i = 0; i<prefix.length();i++) {

@@ -49,9 +49,8 @@ public class wordBreakProblem {
         return false;
     }
     public static void main(String[] args) {
-        // String[] words = {"i", "like", "sam", "samsung", "mobile"}; 
-       String [] words = {"b"};
-        for(int i =0;i<words.length;i++) {
+        String[] words = {"i", "like", "sam", "samsung", "mobile"}; 
+        for(int i =0; i < words.length; i++) {
             insert(words[i]);
         }
         // String key = "ilikesamsung";
