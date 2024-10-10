@@ -5,10 +5,11 @@ public class PrintSubsequences {
             ans.add(new ArrayList<>(tmp));
             return;
         }
-
+        
         // pick
         tmp.add(arr[idx]);
         printSub(arr, idx+1, tmp, ans);
+
         // not pick
         tmp.remove(tmp.size()-1);
         printSub(arr, idx+1, tmp, ans);
@@ -21,6 +22,7 @@ public class PrintSubsequences {
         for(int i = 0; i < ans.size(); i++) {
            set.add(new ArrayList<>(ans.get(i)));
         }
+
 
         for(ArrayList<Integer> i : set) {
             for (int j = 0; j < i.size(); j++) {
