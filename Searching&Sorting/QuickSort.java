@@ -1,39 +1,48 @@
-public class QuickSort {
-    public static void Quick_Sort(int arr[],int first,int end) {
-        if(first>=end) {
+// Java Code -> Quick Sort
+class Main {
+    public static void quickSort(int arr[], int first, int last) {
+        if(first >= last) {
             return;
         }
-        int PivotIDX = Partition(arr,first,end);
-        Quick_Sort(arr, first, PivotIDX-1);
-        Quick_Sort(arr, PivotIDX+1, end);
+        
+        int piIdx = partition(arr, first, last);
+        
+        quickSort(arr, first, piIdx - 1);
+        quickSort(arr, piIdx+1, last);
     }
-    public static int Partition(int arr[],int first,int end) {
-        int pivot=arr[end];
-        int i=first-1;
-        for(int j=first;j<end;j++) {
-            if(arr[j]<=pivot) {
+    
+    public static int partition(int arr[], int low, int high) {
+        int pivot = arr[low];
+        int i = low, j = high;
+        
+        while(i < j) {
+            while(arr[i] <= pivot && i < high) {
                 i++;
-                //swapping
-                int temp=arr[j];
-                arr[j]=arr[i];
-                arr[i]=temp;
+            }
+            
+            while(arr[j] >= pivot && j >= i) {
+                j--;
+            }
+            
+            if(i < j) {
+                int tmp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tmp;
             }
         }
-        i++;
-        int temp=pivot;
-        arr[end]=arr[i];
-        arr[i]=temp;
-        return i;
-   }
-   public static void Print_Array(int arr[]) {
-    for(int i=0;i<arr.length;i++) {
-        System.out.print(arr[i]+" ");
+        
+        int tmp = pivot;
+        arr[low] = arr[j];
+        arr[j] = tmp;
+        
+        return j;
     }
-    System.out.println();
-   }
-   public static void main(String [] args) {
-    int arr[]={6,3,9,8,2,5};
-    Quick_Sort(arr, 0, arr.length-1);
-    Print_Array(arr);
-   }
+    public static void main(String[] args) {
+        int arr[] = { 4, 2, 6, 8, 1};
+        quickSort(arr, 0, arr.length - 1);
+        
+        for(int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
 }
